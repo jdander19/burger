@@ -1,4 +1,4 @@
-const dbConn = require('./connection');
+var dbConn = require('./connection');
 
 
 class ORM {
@@ -10,7 +10,7 @@ class ORM {
 
   selectAll(table = this.table, columns = '*') {
     
-    const query = 'SELECT id, burger_name, devoured FROM burgers';
+    var query = 'SELECT id, burger_name, devoured FROM burgers';
     
     return new Promise((resolve, reject) => {
       
@@ -23,12 +23,12 @@ class ORM {
   
  
   insertOne(burgerName, devoured = false) {
-    const data = {
+    var data = {
       burger_name: burgerName,
       devoured: devoured 
     }
     
-    const query = 'INSERT INTO ?? SET ?';
+    var query = 'INSERT INTO ?? SET ?';
     
     return new Promise((resolve, reject) => {
       
@@ -41,7 +41,7 @@ class ORM {
   
   updateOne(id, obj) {
    
-    const query = 'UPDATE ?? SET ? WHERE id = ?';
+    var query = 'UPDATE ?? SET ? WHERE id = ?';
     
     return new Promise((resolve, reject) => {
    
@@ -54,7 +54,7 @@ class ORM {
   
   deleteOne(id, obj) {
     
-    const query = 'DELETE FROM ?? WHERE id = ?';
+   var query = 'DELETE FROM ?? WHERE id = ?';
     
     return new Promise((resolve, reject) => {
      

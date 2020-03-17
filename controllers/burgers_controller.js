@@ -1,4 +1,4 @@
-const burger = require('../models/burger');
+var burger = require('../models/burger');
 
 
 class Router {
@@ -29,7 +29,7 @@ class Router {
 
   add() {
     this.app.post('/add', (req, res) => {
-      const burgerName = req.body.burgerName;
+      var burgerName = req.body.burgerName;
 
       if (/^\W*$/.test(burgerName)) {
         console.log('Name a Burger');
