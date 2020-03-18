@@ -3,7 +3,7 @@ $(document).ready(() => {
 
     $("#add-burger").on("submit", function(event) {
       event.preventDefault();
-  
+      console.log("#add-burger")
       var aBurger= {
         burgerName: $("#burger").val().trim(),
       };
